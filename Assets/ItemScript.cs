@@ -13,7 +13,10 @@ public class ItemScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        DestroySelf();
+        //DestroySelf();
+
+        animator.SetTrigger("Get");
+
         //ê⁄êGÇµÇΩèuä‘Ç…åƒÇŒÇÍÇÈ
         //Debug.Log("Enter");
     }
@@ -28,11 +31,11 @@ public class ItemScript : MonoBehaviour
         Debug.Log("Exit");
     }
 
-
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();  
     }
 
     // Update is called once per frame
