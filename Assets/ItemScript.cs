@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemScript : MonoBehaviour
 {
+    private AudioSource audioSource;
+
 
     private void DestroySelf()
     {
@@ -16,6 +18,7 @@ public class ItemScript : MonoBehaviour
         //DestroySelf();
 
         animator.SetTrigger("Get");
+        audioSource.Play();
 
         //ê⁄êGÇµÇΩèuä‘Ç…åƒÇŒÇÍÇÈ
         //Debug.Log("Enter");
@@ -35,7 +38,8 @@ public class ItemScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();  
+        animator = GetComponent<Animator>();
+        audioSource = gameObject.GetComponent<AudioSource>();//å¯â âπ
     }
 
     // Update is called once per frame
